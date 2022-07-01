@@ -2,7 +2,6 @@ public class Coordenada
 {
     private double x;
     private double y;
-    private double distancia;
 
     public Coordenada()
     {
@@ -12,11 +11,6 @@ public class Coordenada
     {
         this.x = x;
         this.y = y;
-    }
-
-    public Coordenada(String s)
-    {
-        Coordenada c3 = new Coordenada("1.3/5.3");
     }
 
     public double getX() {
@@ -35,19 +29,6 @@ public class Coordenada
         this.y = y;
     }
 
-    public double getDistancia() {
-        return distancia;
-    }
-
-    public void setDistancia(double distancia) {
-        this.distancia = distancia;
-    }
-
-    public String toString()
-    {
-        return "[" + x + "," + y + "]"/* + "\ndistancia recorrida: " + calcularDistancia()*/;
-    }
-
     public boolean equals(Object o)
     {
         Coordenada c2 = (Coordenada)o;
@@ -55,10 +36,19 @@ public class Coordenada
 
     }
 
-    /*
-    public double calcularDistancia()
+    public String toString()
     {
-        distancia = sqrt()
+        return "[" + x + "," + y + "]";
     }
-     */
+
+    public double calcularDistancia(Coordenada c1)
+    {
+        double x1=x;
+        double y1=y;
+        double x2=c1.getX();
+        double y2=c1.getY();
+        double distancia = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1, 2));
+        return distancia;
+    }
+     
 }
